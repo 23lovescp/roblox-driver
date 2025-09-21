@@ -91,14 +91,14 @@ int main() {
             std::cout << "[INFO] PiDDBCacheTable cleaned" << std::endl;
         }
         else {
-            std::cout << "[-] Failed to clean PiDDBCacheTable (its okay)" << std::endl;
+            std::cout << "[-] Failed to clean PiDDBCacheTable but dont worry" << std::endl;
         }
 
         if (intel_driver::ClearMmUnloadedDrivers(h)) {
             std::cout << "[INFO] MmUnloadedDrivers cleaned" << std::endl;
         }
         else {
-            std::cout << "[-] Failed to clean MmUnloadedDrivers (its okay)" << std::endl;
+            std::cout << "[-] Failed to clean MmUnloadedDrivers but dont worry" << std::endl;
         }
 
         if (!kdmapper::MapDriver(h, DRIVERbytes)) {
@@ -111,7 +111,7 @@ int main() {
         intel_driver::Unload(h);
 
         if (!driver::connect()) {
-            std::cout << "[-] Driver still not loaded (cooked)" << std::endl;
+            std::cout << "[-] Driver not loaded ur fucked try restarting" << std::endl;
             std::cin.get();
             return 1;
         }
